@@ -1,0 +1,25 @@
+.Producto{
+     background-color: #1f2937;
+     margin: 50px;
+     padding: 20px;
+     width: 300px;
+     color: white;
+     border-radius: 15px;
+     font-family: Arial, sans-serif;
+     box-shadow: 10px 10px 10px #ccc;
+}
+.boton-comprar{
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: #ccc;
+    transform: scale(1.05);
+    color: #3b82f6
+}
