@@ -1,0 +1,34 @@
+<div class="principal">
+     <h1>El uso del IF, if anidado</h1>
+</div>
+
+<!-- Tarea 1 Uso del IF, if anidado-->
+<div class="principal_box">
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (i of usuarios; track $index) {
+        <tr>
+          <td>{{ i.nombre }}</td>
+          <td>{{ i.edad }}</td>
+          <td>
+            @if (i.activo) {
+              Activo
+            } @else {
+              Inactivo
+            }
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+

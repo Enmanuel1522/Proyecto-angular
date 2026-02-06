@@ -1,0 +1,22 @@
+<div class="principal">
+     <h1>El uso del FOR</h1>
+</div>
+
+<!-- Crear una lista de frutas y mostrarlas -->
+<div class="principal_box">
+
+@for (i of frutas; track $index) {
+     <div class="fruta_li"><li>{{i}}</li></div>
+}
+
+     <input class="" type="text" placeholder="Nueva fruta" [(ngModel)]="nuevaFruta" />
+
+     <button class="boton_agregar"  (click)="agregarFruta()">Agregar</button>
+
+</div>
+
+
+
+
+
+

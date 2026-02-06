@@ -1,0 +1,21 @@
+<div class="principal">
+     <h1>El uso del IF, if anidado</h1>
+</div>
+
+<!-- Tarea 1 Uso del IF, if anidado-->
+<div class="principal_box">
+
+@if(score >= 90) {
+    <h2>Tu calificacion es de {{score}}, Excelente</h2>
+
+}@if (score >= 60 && score <= 89) {
+     <h2>Tu calificacion es de {{score}}, Aprobado</h2>
+
+}@if(score < 60) {
+     <h2>Tu calificacion es de {{score}}, Reprobado</h2>
+}
+
+<p>Ingresa tu calificacion para ver tu resultado</p>
+<input type="number" [(ngModel)]="score" placeholder="Ingresa la calificacion"/>
+</div>
+
