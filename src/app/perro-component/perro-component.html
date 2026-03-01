@@ -1,0 +1,42 @@
+<div class="refugio">
+  <h1>🐾 Refugio Patitas Felices</h1>
+  <p class="subtitulo">Encuentra a tu mejor amigo y dale un hogar</p>
+
+  @if (cargando()) {
+    <div class="cargando">Buscando perritos...</div>
+  }
+
+  <div class="galeria">
+    @for (perrito of perritos(); track perrito.id) {
+      <div class="tarjeta" [class.adoptado]="perrito.adoptado">
+        <img [src]="perrito.imagen" [alt]="perrito.nombre" />
+        <div class="info">
+          <h2>{{ perrito.nombre }}</h2>
+          <p>🦴 {{ perrito.raza }} · {{ perrito.edad }}</p>
+          @if (perrito.adoptado) {
+            <span class="badge"> Adoptado</span>
+          } @else {
+            <button class="btn-detalle" (click)="verDetalle(perrito)">Ver detalle</button>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- Modal de detalle -->
+@if (perritorSeleccionado()) {
+  <div class="overlay" (click)="cerrarDetalle()">
+    <div class="modal" (click)="$event.stopPropagation()">
+      <button class="cerrar" (click)="cerrarDetalle()">✕</button>
+      <img [src]="perritorSeleccionado()!.imagen" [alt]="perritorSeleccionado()!.nombre" />
+      <h2>{{ perritorSeleccionado()!.nombre }}</h2>
+      <p><strong>Raza:</strong> {{ perritorSeleccionado()!.raza }}</p>
+      <p><strong>Edad:</strong> {{ perritorSeleccionado()!.edad }}</p>
+      <p><strong>Sobre mí:</strong> {{ perritorSeleccionado()!.descripcion }}</p>
+      <button class="btn-adoptar" (click)="adoptar(perritorSeleccionado()!.id)">
+        ❤️ Quiero adoptarlo
+      </button>
+    </div>
+  </div>
+}

@@ -1,6 +1,26 @@
+<nav class="navbar">
+  <span class="logo">Mis Tareas Angular</span>
+  <div class="links">
+    <a routerLink="/titulo-tienda">Tienda</a>
+    <a routerLink="/tarjeta-producto">Tarjeta</a>
+    <a routerLink="/resumen">Resumen</a>
+    <a routerLink="/usando-if">If</a>
+    <a routerLink="/usando-for">For</a>
+    <a routerLink="/usando-if-2">If 2</a>
+    <a routerLink="/lista-usuarios">Usuarios</a>
+    <a routerLink="/message">Message</a>
+    <a routerLink="/color-box">Color Box</a>
+    <a routerLink="/alert-button">Alert</a>
+    <a routerLink="/counter">Counter</a>
+    <a routerLink="/perritos">🐾 Perritos</a>
+  </div>
+</nav>
+
+<main class="contenido">
+  <router-outlet></router-outlet>
+</main>
+
 <app-titulo-tienda></app-titulo-tienda>
-
-
 
 <app-tarjeta-producto></app-tarjeta-producto>
 
@@ -14,3 +34,18 @@
 
 <app-lista-usuarios></app-lista-usuarios>
 
+<app-message-component [message]="'Hola, bienvenido a angular'"></app-message-component>
+
+<app-color-box-component [colorFondo]="'red'"></app-color-box-component>
+
+<app-alert-button-component 
+(mensajeEnviado)="recibirMensaje($event)"
+[mensaje]="mensajeRecibido">
+</app-alert-button-component>
+
+<app-counter-component 
+[valorActual]="valorActual"
+(countChanged)="updateCount($event)">
+</app-counter-component>
+
+<app-perro-component></app-perro-component>
